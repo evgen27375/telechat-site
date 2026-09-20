@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TELECHAT — мессенджер, который работает без VPN</title>
+<meta name="description" content="TELECHAT — быстрый мессенджер на базе Telegram со встроенным подключением. Работает без отдельного VPN.">
+<style>
+  :root{
+    --indigo:#4338CA; --indigo-d:#3730A6; --dark:#1E1B64;
+    --bg:#F4F4FB; --card:#FFFFFF; --ink:#1E1B64; --muted:#5B5B82; --line:#E6E6F2;
+    color-scheme: light;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--indigo)}
+  /* header */
+  header{padding:22px 0;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--indigo)}
+  .brand svg{width:38px;height:38px;display:block}
+  .ghost{font-size:14px;font-weight:600;color:var(--muted);text-decoration:none}
+  /* hero */
+  .hero{text-align:center;padding:40px 0 24px}
+  .hero .logo{width:120px;height:120px;margin:0 auto 18px;display:block;
+    filter:drop-shadow(0 12px 30px rgba(67,56,202,.28))}
+  h1{font-size:clamp(30px,6vw,52px);line-height:1.05;margin:.2em 0;letter-spacing:-.03em}
+  h1 .accent{color:var(--indigo)}
+  .lede{font-size:clamp(16px,2.5vw,20px);color:var(--muted);max-width:620px;margin:14px auto 0}
+  .cta{margin:30px 0 8px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:14px;
+    font-weight:700;font-size:17px;text-decoration:none;border:0;cursor:pointer}
+  .btn-primary{background:var(--indigo);color:#fff;box-shadow:0 8px 22px rgba(67,56,202,.35)}
+  .btn-primary:hover{background:var(--indigo-d)}
+  .btn-ghost{background:transparent;color:var(--indigo);border:1.5px solid var(--line)}
+  .meta{font-size:13px;color:var(--muted);margin-top:6px}
+  .meta code{background:#EDEDF7;border-radius:6px;padding:2px 7px;font-size:12px;word-break:break-all}
+  /* features */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:44px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .card h3{margin:.2em 0 .3em;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  .ic{width:40px;height:40px;border-radius:12px;background:#EEF0FF;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .ic svg{width:22px;height:22px;stroke:var(--indigo);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  /* steps */
+  section.block{margin:48px 0}
+  h2{font-size:26px;letter-spacing:-.02em;margin:0 0 18px}
+  ol.steps{padding-left:0;list-style:none;counter-reset:s;margin:0}
+  ol.steps li{counter-increment:s;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--line)}
+  ol.steps li:last-child{border-bottom:0}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:12px;width:34px;height:34px;
+    background:var(--indigo);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .note{background:#FFF8E9;border:1px solid #F3E2B8;border-radius:14px;padding:16px 18px;color:#6b5a20;font-size:14px}
+  .note b{color:#5a4a10}
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0 46px;color:var(--muted);font-size:13px;text-align:center}
+  footer a{color:var(--muted)}
+  @media (max-width:720px){ .grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <!-- mark -->
+      <svg viewBox="0 0 1024 1024" aria-hidden="true">
+        <g fill="currentColor">
+          <rect x="140" y="430" width="150" height="52" rx="26"/>
+          <rect x="110" y="520" width="235" height="52" rx="26"/>
+          <rect x="165" y="610" width="150" height="52" rx="26"/>
+        </g>
+        <path fill="currentColor" d="M455 150C330 150 360 210 360 330L360 560C360 700 415 755 460 760L445 855C440 888 475 892 498 866L585 772C755 762 880 636 880 468C880 300 758 172 598 160C555 152 510 150 455 150Z"/>
+        <g transform="translate(500 465) rotate(-27)"><path fill="#fff" d="M-205 -150L235 0L-205 150L-95 0Z"/></g>
+      </svg>
+      telechat
+    </div>
+    <a class="ghost" href="#install">Как установить</a>
+  </header>
+
+  <div class="hero">
+    <!-- app icon (white rounded square + mark) -->
+    <svg class="logo" viewBox="0 0 1024 1024" aria-label="TELECHAT">
+      <rect width="1024" height="1024" rx="230" fill="#fff"/>
+      <g fill="#4338CA">
+        <rect x="196" y="452" width="132" height="46" rx="23"/>
+        <rect x="170" y="531" width="205" height="46" rx="23"/>
+        <rect x="214" y="610" width="132" height="46" rx="23"/>
+      </g>
+      <path fill="#4338CA" d="M470 210C360 210 386 262 386 366L386 566C386 690 434 738 474 742L461 826C457 855 487 858 507 836L580 754C724 746 830 638 830 494C830 350 726 240 590 231C553 224 508 210 470 210Z"/>
+      <g transform="translate(508 495) rotate(-27)"><path fill="#fff" d="M-180 -132L206 0L-180 132L-84 0Z"/></g>
+    </svg>
+    <h1>Общение <span class="accent">без границ</span><br>и без VPN</h1>
+    <p class="lede">TELECHAT — быстрый мессенджер на основе Telegram. Подключается сам, напрямую,
+      без отдельного VPN-приложения. Ваши чаты, каналы и звонки — как обычно.</p>
+
+    <div class="cta">
+      <a class="btn btn-primary" id="download" href="telechat.apk" download>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Скачать для Android
+      </a>
+      <a class="btn btn-ghost" href="#install">Инструкция</a>
+    </div>
+    <div class="meta">
+      Версия 1.0 · Android 5.0+ · APK<br>
+      SHA-256: <code id="sha">будет добавлен при публикации</code>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+      <h3>Работает сразу</h3>
+      <p>Встроенное подключение включается автоматически при первом запуске. Ничего настраивать не нужно.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Ваш аккаунт Telegram</h3>
+      <p>Тот же номер, те же чаты, каналы и контакты. Переписка шифруется до серверов Telegram.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
+      <h3>Быстро и привычно</h3>
+      <p>Полный функционал Telegram: сообщения, медиа, голосовые, звонки, стикеры, папки.</p>
+    </div>
+  </div>
+
+  <section class="block" id="install">
+    <h2>Как установить</h2>
+    <ol class="steps">
+      <li><b>Скачайте APK</b> кнопкой выше — файл сохранится в «Загрузки».</li>
+      <li><b>Откройте файл.</b> Android спросит разрешение на установку из этого источника —
+        нажмите «Настройки» и разрешите установку для браузера/файлового менеджера.</li>
+      <li><b>Установите</b> и откройте TELECHAT.</li>
+      <li><b>Войдите</b> по своему номеру телефона — придёт код в Telegram или по SMS.</li>
+      <li>Готово. Подключение работает автоматически, VPN включать не нужно.</li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <div class="note">
+      <b>Честно о приватности.</b> TELECHAT подключается к Telegram через собственный сервер-посредник —
+      поэтому VPN не нужен. Через этот сервер проходит ваш IP-адрес и факт использования Telegram;
+      <b>содержимое переписки серверу-посреднику недоступно</b> — оно зашифровано между приложением и
+      серверами Telegram. Исходный код открыт (ссылка ниже).
+    </div>
+  </section>
+
+  <footer class="wrap">
+    TELECHAT основан на открытом коде Telegram for Android (лицензия GPLv2).<br>
+    Исходный код: <a id="src" href="#">github.com/…/telechat-android</a> ·
+    Telegram — товарный знак Telegram Messenger LLP.
+  </footer>
+
+</div>
+</body>
+</html>
