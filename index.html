@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>telechat — мессенджер, который работает без VPN</title>
-<meta name="description" content="telechat — быстрый мессенджер на базе Telegram со встроенным подключением. Работает без отдельного VPN.">
+<title>telechat — свой мессенджер</title>
+<meta name="description" content="telechat — быстрый и приватный мессенджер на открытом протоколе XMPP. Зашифрованное соединение, свои чаты, лёгкое приложение для Android.">
 <style>
   :root{
     --indigo:#4338CA; --indigo-d:#3730A6; --dark:#1E1B64;
@@ -74,9 +74,9 @@
   <div class="hero">
     <!-- app icon (white rounded square + real mark) -->
     <img class="logo" src="telechat-appicon.png" alt="telechat" width="120" height="120">
-    <h1>Общение <span class="accent">без границ</span><br>и без VPN</h1>
-    <p class="lede">telechat — быстрый мессенджер на основе Telegram. Подключается сам, напрямую,
-      без отдельного VPN-приложения. Ваши чаты, каналы и звонки — как обычно.</p>
+    <h1>Общение <span class="accent">ближе</span></h1>
+    <p class="lede">telechat — быстрый и приватный мессенджер на открытом протоколе.
+      Зашифрованное соединение, свои чаты, лёгкое приложение. Без рекламы и лишнего.</p>
 
     <div class="cta">
       <a class="btn btn-primary" id="download" href="telechat.apk" download>
@@ -87,53 +87,54 @@
     </div>
     <div class="meta">
       Версия 1.0 · Android 5.0+ · APK<br>
-      SHA-256: <code id="sha">6bdea03916e9346827e2edca1a981231d01ed21c1a55d94fd10d9f56f892b8dd</code>
+      SHA-256: <code id="sha">0510fb6d55734d787c39f96114b54cd4f97541cbc11da8542e50cc5450443a29</code>
     </div>
   </div>
 
   <div class="grid">
     <div class="card">
-      <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
-      <h3>Работает сразу</h3>
-      <p>Встроенное подключение включается автоматически при первом запуске. Ничего настраивать не нужно.</p>
-    </div>
-    <div class="card">
       <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h3>Ваш аккаунт Telegram</h3>
-      <p>Тот же номер, те же чаты, каналы и контакты. Переписка шифруется до серверов Telegram.</p>
+      <h3>Приватно</h3>
+      <p>Соединение с сервером зашифровано (TLS). Никакой рекламы и слежки — только ваша переписка.</p>
     </div>
     <div class="card">
-      <div class="ic"><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
-      <h3>Быстро и привычно</h3>
-      <p>Полный функционал Telegram: сообщения, медиа, голосовые, звонки, стикеры, папки.</p>
+      <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></div>
+      <h3>Открытый протокол</h3>
+      <p>Работает на стандарте XMPP/Jabber. Можно писать людям и на других серверах — это федерация.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div>
+      <h3>Быстро и красиво</h3>
+      <p>Плавный интерфейс, мгновенная доставка сообщений, лёгкое приложение без лишнего веса.</p>
     </div>
   </div>
 
   <section class="block" id="install">
-    <h2>Как установить</h2>
+    <h2>Как установить и начать</h2>
     <ol class="steps">
       <li><b>Скачайте APK</b> кнопкой выше — файл сохранится в «Загрузки».</li>
       <li><b>Откройте файл.</b> Android спросит разрешение на установку из этого источника —
         нажмите «Настройки» и разрешите установку для браузера/файлового менеджера.</li>
       <li><b>Установите</b> и откройте telechat.</li>
-      <li><b>Войдите</b> по своему номеру телефона — придёт код в Telegram или по SMS.</li>
-      <li>Готово. Подключение работает автоматически, VPN включать не нужно.</li>
+      <li><b>Заведите аккаунт</b> на любом XMPP-сервере (например на <a href="https://www.xmpp.jp">xmpp.jp</a>) —
+        получится логин вида <b>имя@сервер</b> и пароль.</li>
+      <li><b>Войдите</b> в telechat: введите <b>имя@сервер</b> и пароль.</li>
+      <li>Нажмите <b>«+»</b>, добавьте собеседника по его адресу <b>имя@сервер</b> — и общайтесь.</li>
     </ol>
   </section>
 
   <section class="block">
     <div class="note">
-      <b>Честно о приватности.</b> telechat подключается к Telegram через собственный сервер-посредник —
-      поэтому VPN не нужен. Через этот сервер проходит ваш IP-адрес и факт использования Telegram;
-      <b>содержимое переписки серверу-посреднику недоступно</b> — оно зашифровано между приложением и
-      серверами Telegram. Исходный код открыт (ссылка ниже).
+      <b>Это ранняя сборка.</b> Сейчас для входа нужен аккаунт на публичном XMPP-сервере
+      (например xmpp.jp). Собственный сервер telechat в разработке — тогда регистрация появится
+      прямо в приложении, без сторонних сервисов. Соединение с сервером шифруется;
+      сообщения доставляются через сервер между вами и собеседником.
     </div>
   </section>
 
   <footer class="wrap">
-    telechat основан на открытом коде Telegram for Android (лицензия GPLv2).<br>
-    Исходный код: <a id="src" href="#">github.com/…/telechat-android</a> ·
-    Telegram — товарный знак Telegram Messenger LLP.
+    telechat построен на открытом стандарте обмена сообщениями XMPP (Jabber).<br>
+    © telechat · CLOSER PEOPLE
   </footer>
 
 </div>
